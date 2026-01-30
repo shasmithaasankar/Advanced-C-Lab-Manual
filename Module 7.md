@@ -63,7 +63,37 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+struct data {
+    int a, b, c;
+};
+
+
+struct data compute(struct data d) {
+    struct data result;
+    result.a = d.a + d.b;
+    result.b = d.c - d.a;
+    result.c = d.a + d.b + d.c;
+    return result;
+}
+
+int main() {
+    struct data input, output;
+
+    
+    scanf("%d%d%d", &input.a, &input.b, &input.c);
+
+    
+    output = compute(input);
+
+   
+    printf("%d", output.a);
+
+    return 0;
+}
+```
 
 
 
@@ -71,7 +101,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="1178" height="423" alt="image" src="https://github.com/user-attachments/assets/b86c5cb1-d173-4ab7-b62e-d3189d739d8a" />
+
 
 
 
@@ -105,7 +136,35 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main() {
+    char filename[50];
+    FILE *fp;
+
+    
+    scanf("%s", filename);
+
+   
+    fp = fopen(filename, "w");
+
+    if (fp == NULL) {
+        printf("Error creating file!\n");
+        return 1;
+    }
+
+    
+    printf("%s File Created Successfully\n", filename);
+    printf("%s File Opened\n", filename);
+
+    
+    fclose(fp);
+    printf("%s File Closed\n", filename);
+
+    return 0;
+}
+```
 
 
 
@@ -113,7 +172,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="1183" height="483" alt="image" src="https://github.com/user-attachments/assets/8850618c-61ee-475b-b9d3-88ff1381b035" />
+
 
 
 
@@ -152,7 +212,41 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main() {
+    char filename[100];
+    int n, i;
+    float num;
+
+    
+    scanf("%s", filename);
+
+    
+    FILE *fp = fopen(filename, "w");
+    if (fp == NULL) {
+        printf("Error opening file %s\n", filename);
+        return 1;
+    }
+
+    
+    scanf("%d", &n);
+
+    
+    for (i = 0; i < n; i++) {
+        
+        scanf("%f", &num);
+        fprintf(fp, "%.2f\n", num);
+    }
+
+    printf("%s Opened\n", filename);
+    printf("Data added Successfully\n");
+
+    fclose(fp);
+    return 0;
+}
+```
 
 
 
@@ -160,7 +254,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="1183" height="469" alt="image" src="https://github.com/user-attachments/assets/370899fe-965c-40e1-9f9e-3e43cf5b1cc4" />
+
 
 
 
@@ -206,7 +301,36 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct
+{
+    char subject[50];
+    int marks;
+}student;
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    student *subjects=(student *)malloc(n *sizeof(student));
+    if(subjects==NULL)
+    {
+        printf("Memory allocation failed");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",subjects[i].subject,&subjects[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",subjects[i].subject,subjects[i].marks);
+    }
+    free(subjects);
+    return 0;
+}
+```
 
 
 
@@ -214,7 +338,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="557" height="430" alt="image" src="https://github.com/user-attachments/assets/cd5d9229-e683-4a19-b3a6-ea9c36656933" />
+
 
 
 
