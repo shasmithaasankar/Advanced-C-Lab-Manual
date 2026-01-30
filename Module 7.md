@@ -16,12 +16,31 @@ Else
  
 Program:
 
-//type your code here
+```
+#include<stdio.h>
+struct vacc{
+    int age;
+    char name[25];
+    
+};
+int main(){
+    struct vacc l[10];
+    scanf("%d %s",&l[0].age,l[0].name);
+    printf("Age:%d\nName:%svaccine:%d\neligibility:",l[0].age,l[0].name,l[0].age);
+    if(l[0].age>18)
+      printf("yes");
+    else
+      printf("no");
+    return 0;  
+      
+}
+```
 
 
 Output:
 
-//paste your output here
+<img width="1193" height="304" alt="image" src="https://github.com/user-attachments/assets/7ecad547-3218-487c-a9ad-aca2bf2d1d7a" />
+
 
 
 Result:
