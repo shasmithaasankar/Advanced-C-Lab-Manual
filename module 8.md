@@ -1,4 +1,4 @@
-EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
+## EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
 Aim:
 To write a C program print the lowercase English word corresponding to the number
 Algorithm:
@@ -15,8 +15,34 @@ Algorithm:
 4.	Exit the program.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    int n;
+
+    // Input
+    scanf("%d", &n);
+
+    // Switch statement
+    switch (n) {
+        case 5:  printf("seventy one"); break;
+        case 6:  printf("seventy two"); break;
+        case 7:  printf("seventy three"); break;
+        case 8:  printf("seventy four"); break;
+        case 9:  printf("seventy five"); break;
+        case 10: printf("seventy six"); break;
+        case 11: printf("seventy seven"); break;
+        case 12: printf("seventy eight"); break;
+        case 13: printf("seventy nine"); break;
+        default: printf("greater than 13");
+    }
+
+    return 0;
+}
+```
+
+
 
 
 
@@ -24,7 +50,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="524" height="253" alt="image" src="https://github.com/user-attachments/assets/1baebb76-c404-4141-89da-c08a9bbe7a5f" />
+
 
 
 
@@ -47,7 +74,35 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main() {
+    char a[50];
+    int c, h;
+
+    // Input string
+    scanf("%s", a);
+
+    // Outer loop for digits 0 to 3
+    for (h = 0; h <= 3; h++) {
+        c = 0;
+
+        // Count frequency of current digit
+        for (int i = 0; a[i] != '\0'; i++) {
+            if (a[i] == (h + '0')) {
+                c++;
+            }
+        }
+
+        // Print count followed by space
+        printf("%d ", c);
+    }
+
+    return 0;
+}
+```
+
 
 
 
@@ -55,7 +110,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="469" height="329" alt="image" src="https://github.com/user-attachments/assets/e198da59-c723-437b-90f5-b5cf80793a7c" />
+
 
 
 
@@ -84,7 +140,66 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void swap(char *a, char *b) {
+    char t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int next_permutation(char *s, int n) {
+    int i = n - 2;
+
+    while (i >= 0 && s[i] >= s[i + 1])
+        i--;
+
+    if (i < 0)
+        return 0;
+
+    int j = n - 1;
+    while (s[j] <= s[i])
+        j--;
+
+    swap(&s[i], &s[j]);
+
+    int l = i + 1, r = n - 1;
+    while (l < r) {
+        swap(&s[l], &s[r]);
+        l++;
+        r--;
+    }
+
+    return 1;
+}
+
+int main() {
+    int n;
+    char *s;
+
+    scanf("%d", &n);
+    s = (char *)malloc((n + 1) * sizeof(char));
+    scanf("%s", s);
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (s[i] > s[j]) {
+                swap(&s[i], &s[j]);
+            }
+        }
+    }
+
+    do {
+        printf("%s\n", s);
+    } while (next_permutation(s, n));
+
+    free(s);
+    return 0;
+}
+```
 
 
 
@@ -92,7 +207,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="504" height="376" alt="image" src="https://github.com/user-attachments/assets/12c7c3a3-94a0-4db4-bfc0-ab4c4f2607fb" />
+
 
 
 
@@ -117,7 +233,32 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main() {
+    int n, i, j, min;
+    int len;
+
+    scanf("%d", &n);
+
+    len = n * 2 - 1;
+
+    for (i = 0; i < len; i++) {
+        for (j = 0; j < len; j++) {
+            min = i;
+            if (j < min) min = j;
+            if (len - i - 1 < min) min = len - i - 1;
+            if (len - j - 1 < min) min = len - j - 1;
+
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
 
 
@@ -125,7 +266,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="465" height="315" alt="image" src="https://github.com/user-attachments/assets/7f84fe52-57d1-42e9-b378-fcf023cbf8b9" />
+
 
 
 
@@ -156,7 +298,22 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int square() {
+    int num;
+    scanf("%d", &num);
+    return num * num;
+}
+
+int main() {
+    int result;
+    result = square();
+    printf("%d", result);
+    return 0;
+}
+```
 
 
 
@@ -164,7 +321,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="516" height="194" alt="image" src="https://github.com/user-attachments/assets/efc43648-5d0f-494c-be34-cf1dddbb5a6e" />
+
 
 
 
