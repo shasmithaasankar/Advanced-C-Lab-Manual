@@ -1,4 +1,4 @@
-EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
+## EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
 Aim:
 To write a C program to display stack elements using an array.
@@ -13,11 +13,26 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+float stack[100];
+int top, i;
+
+void display() {
+    if (top == -1) {
+        printf("stack is empty\n");
+    }
+    else {
+        for (i = top; i >= 0; i--) {
+            printf("%.1f ", stack[i]);
+        }
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="837" height="550" alt="image" src="https://github.com/user-attachments/assets/308cee28-95fd-479e-b2c7-6a97017d71a8" />
+
 
 
 
@@ -36,11 +51,24 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int size = 3, top = -1;
+char stack[100];
+
+void push(char data) {
+    if (top == size - 1) {
+        printf("stack is full\n");
+    } else {
+        top++;
+        stack[top] = data;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="841" height="575" alt="image" src="https://github.com/user-attachments/assets/a72dd057-7d78-465e-96f6-acea201c0d43" />
+
 
 
 
@@ -62,11 +90,23 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+float queue[50];
+int size,front,rear,i;
+void display()
+{
+    if(front==-1||front>rear)
+    printf("No elements to display");
+    else
+    for(i=front;i<=rear;i++)
+    printf("%.1f ",queue[i]);
+}
+```
 
 Output:
 
-//paste your output here
+<img width="784" height="529" alt="image" src="https://github.com/user-attachments/assets/97b071bc-1e99-4e50-8cea-d26a39a07f06" />
+
 
 
 Result:
@@ -86,11 +126,25 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+int queue[50];
+int front,rear;
+void enqueue(int data)
+{
+    if(front==-1)
+    front=0;
+    rear++;
+    queue[rear]=data;
+}
+```
+
 
 Output:
 
-//paste your output here
+<img width="968" height="485" alt="image" src="https://github.com/user-attachments/assets/d1879643-2375-4746-a34a-7d2285b46fff" />
+
+
+
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -121,11 +175,21 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 Program:
 
-//type your code here
-
+```
+float queue[50];
+int front, rear;
+void dequeue()
+{
+    if(front==-1||front>rear)
+    printf("No elements to display");
+    else
+    front++;
+}
+```
 Output:
 
-//paste your output here
+<img width="922" height="675" alt="image" src="https://github.com/user-attachments/assets/1bca18fe-90fa-4e51-8a53-ac64348f157c" />
+
 
 
 Result:
